@@ -19,22 +19,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        // All blocks go in mineable_with_pickaxe
+
         var pickaxeTag = tag(BlockTags.MINEABLE_WITH_PICKAXE);
 
         FMBlocks.GENERATED_BLOCKS.forEach(block ->
                 pickaxeTag.add(block.get())
         );
 
-        // All blocks need at least stone tool
+
         var stoneToolTag = tag(BlockTags.NEEDS_STONE_TOOL);
 
         FMBlocks.GENERATED_BLOCKS.forEach(block ->
                 stoneToolTag.add(block.get())
         );
 
-        // If you have static blocks, add them too:
-        // pickaxeTag.add(FMBlocks.TFMB_BLOCK.get());
-        // stoneToolTag.add(FMBlocks.TFMB_BLOCK.get());
+
     }
 }
