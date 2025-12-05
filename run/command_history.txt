@@ -1,5 +1,0 @@
-/give Dev thefmb:gildstone_block_2 64
-/give Dev thefmb:fmb_orb_iron
-/recipe
-/reload
-/time set day
