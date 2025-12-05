@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "thefmb:grenid",
+    "thefmb:grenid_smooth",
+    "thefmb:grenid_bricks",
+    "thefmb:grenid_chiseled_bricks",
+    "thefmb:grenid_mossy",
+    "thefmb:grenid_tiles"
+
+  ]
+}

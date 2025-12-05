@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "thefmb:bluid",
+    "thefmb:bluid_smooth",
+    "thefmb:bluid_bricks",
+    "thefmb:bluid_chiseled_bricks",
+    "thefmb:bluid_mossy",
+    "thefmb:bluid_tiles"
+
+  ]
+}

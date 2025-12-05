@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "thefmb:ruid",
+    "thefmb:ruid_smooth",
+    "thefmb:ruid_bricks",
+    "thefmb:ruid_chiseled_bricks",
+    "thefmb:ruid_mossy",
+    "thefmb:ruid_tiles"
+
+
+  ]
+}
