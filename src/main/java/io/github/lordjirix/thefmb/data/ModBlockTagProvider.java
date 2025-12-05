@@ -18,63 +18,23 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(FMBlocks.GRENID_5_BLOCK.get())
-                .add(FMBlocks.GRENID_4_BLOCK.get())
-                .add(FMBlocks.GRENID_3_BLOCK.get())
-                .add(FMBlocks.GRENID_2_BLOCK.get())
-                .add(FMBlocks.GRENID_1_BLOCK.get())
-                .add(FMBlocks.GRENID_0_BLOCK.get())
-                .add(FMBlocks.TFMB_BLOCK.get())
-                .add(FMBlocks.RUID_5_BLOCK.get())
-                .add(FMBlocks.RUID_4_BLOCK.get())
-                .add(FMBlocks.RUID_3_BLOCK.get())
-                .add(FMBlocks.RUID_2_BLOCK.get())
-                .add(FMBlocks.RUID_1_BLOCK.get())
-                .add(FMBlocks.RUID_0_BLOCK.get())
-                .add(FMBlocks.YELLID_5_BLOCK.get())
-                .add(FMBlocks.YELLID_4_BLOCK.get())
-                .add(FMBlocks.YELLID_3_BLOCK.get())
-                .add(FMBlocks.YELLID_2_BLOCK.get())
-                .add(FMBlocks.YELLID_1_BLOCK.get())
-                .add(FMBlocks.YELLID_0_BLOCK.get())
-                .add(FMBlocks.BLUID_5_BLOCK.get())
-                .add(FMBlocks.BLUID_4_BLOCK.get())
-                .add(FMBlocks.BLUID_3_BLOCK.get())
-                .add(FMBlocks.BLUID_2_BLOCK.get())
-                .add(FMBlocks.BLUID_1_BLOCK.get())
-                .add(FMBlocks.BLUID_0_BLOCK.get());
 
+        // All blocks go in mineable_with_pickaxe
+        var pickaxeTag = tag(BlockTags.MINEABLE_WITH_PICKAXE);
 
+        FMBlocks.GENERATED_BLOCKS.forEach(block ->
+                pickaxeTag.add(block.get())
+        );
 
-        tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(FMBlocks.GRENID_5_BLOCK.get())
-                .add(FMBlocks.GRENID_4_BLOCK.get())
-                .add(FMBlocks.GRENID_3_BLOCK.get())
-                .add(FMBlocks.GRENID_2_BLOCK.get())
-                .add(FMBlocks.GRENID_1_BLOCK.get())
-                .add(FMBlocks.GRENID_0_BLOCK.get())
-                .add(FMBlocks.TFMB_BLOCK.get())
-                .add(FMBlocks.RUID_5_BLOCK.get())
-                .add(FMBlocks.RUID_4_BLOCK.get())
-                .add(FMBlocks.RUID_3_BLOCK.get())
-                .add(FMBlocks.RUID_2_BLOCK.get())
-                .add(FMBlocks.RUID_1_BLOCK.get())
-                .add(FMBlocks.RUID_0_BLOCK.get())
-                .add(FMBlocks.YELLID_5_BLOCK.get())
-                .add(FMBlocks.YELLID_4_BLOCK.get())
-                .add(FMBlocks.YELLID_3_BLOCK.get())
-                .add(FMBlocks.YELLID_2_BLOCK.get())
-                .add(FMBlocks.YELLID_1_BLOCK.get())
-                .add(FMBlocks.YELLID_0_BLOCK.get())
-                .add(FMBlocks.BLUID_5_BLOCK.get())
-                .add(FMBlocks.BLUID_4_BLOCK.get())
-                .add(FMBlocks.BLUID_3_BLOCK.get())
-                .add(FMBlocks.BLUID_2_BLOCK.get())
-                .add(FMBlocks.BLUID_1_BLOCK.get())
-                .add(FMBlocks.BLUID_0_BLOCK.get());
+        // All blocks need at least stone tool
+        var stoneToolTag = tag(BlockTags.NEEDS_STONE_TOOL);
 
+        FMBlocks.GENERATED_BLOCKS.forEach(block ->
+                stoneToolTag.add(block.get())
+        );
 
-
+        // If you have static blocks, add them too:
+        // pickaxeTag.add(FMBlocks.TFMB_BLOCK.get());
+        // stoneToolTag.add(FMBlocks.TFMB_BLOCK.get());
     }
 }

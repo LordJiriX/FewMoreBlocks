@@ -33,6 +33,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.slf4j.Logger;
 
+import static io.github.lordjirix.thefmb.block.FMBlocks.BLOCK_ITEM_REG;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Thefmb.MODID)
 public class Thefmb {
@@ -52,36 +54,11 @@ public class Thefmb {
 
 
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> THEFMB_TAB = CREATIVE_MODE_TABS.register("thefmb_tab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.thefmb")).withTabsBefore(CreativeModeTabs.BUILDING_BLOCKS).icon(() -> FMBlocks.BLUID_4_BLOCK_ITEM.get().getDefaultInstance()).displayItems((parameters, output) -> {
-        output.accept(FMBlocks.TFMB_BLOCK.get());
-        // Bluids
-        output.accept(FMBlocks.BLUID_0_BLOCK.get());
-        output.accept(FMBlocks.BLUID_1_BLOCK.get());
-        output.accept(FMBlocks.BLUID_2_BLOCK.get());
-        output.accept(FMBlocks.BLUID_3_BLOCK.get());
-        output.accept(FMBlocks.BLUID_4_BLOCK.get());
-        output.accept(FMBlocks.BLUID_5_BLOCK.get());
-        // Yellids
-        output.accept(FMBlocks.YELLID_0_BLOCK.get());
-        output.accept(FMBlocks.YELLID_1_BLOCK.get());
-        output.accept(FMBlocks.YELLID_2_BLOCK.get());
-        output.accept(FMBlocks.YELLID_3_BLOCK.get());
-        output.accept(FMBlocks.YELLID_4_BLOCK.get());
-        output.accept(FMBlocks.YELLID_5_BLOCK.get());
-        // Ruids
-        output.accept(FMBlocks.RUID_0_BLOCK.get());
-        output.accept(FMBlocks.RUID_1_BLOCK.get());
-        output.accept(FMBlocks.RUID_2_BLOCK.get());
-        output.accept(FMBlocks.RUID_3_BLOCK.get());
-        output.accept(FMBlocks.RUID_4_BLOCK.get());
-        output.accept(FMBlocks.RUID_5_BLOCK.get());
-        // Grenids
-        output.accept(FMBlocks.GRENID_0_BLOCK.get());
-        output.accept(FMBlocks.GRENID_1_BLOCK.get());
-        output.accept(FMBlocks.GRENID_2_BLOCK.get());
-        output.accept(FMBlocks.GRENID_3_BLOCK.get());
-        output.accept(FMBlocks.GRENID_4_BLOCK.get());
-        output.accept(FMBlocks.GRENID_5_BLOCK.get());
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> THEFMB_TAB = CREATIVE_MODE_TABS.register("thefmb_tab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.thefmb")).withTabsBefore(CreativeModeTabs.BUILDING_BLOCKS).icon(() ->  BLOCK_ITEM_REG.get("yellid").get().getDefaultInstance()).displayItems((parameters, output) -> {
+        BLOCK_ITEM_REG.values().forEach(itemHolder -> {
+            output.accept(itemHolder.get());
+        });
+
 
     }).build());
 

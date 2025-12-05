@@ -26,7 +26,6 @@ public class FMBlockStateProvider extends BlockStateProvider {
         // blockWithItem(FMBlocks.BLUID_0_BLOCK);
     }
 
-
     /**
      * Creates:
      *  ✔ blockstate file
